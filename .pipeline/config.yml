@@ -1,14 +1,12 @@
 version: "1.0"
 
-general:
-  buildTool: custom
-
 stages:
   Build:
     steps:
-      - script:
-          name: "PoC - GitHub Source Pipeline"
-          script: |
-            echo "Pipeline executado com sucesso no SAP CI&D"
-            echo "Repositorio SOURCE clonado corretamente"
-            echo "Branch: ${GIT_BRANCH}"
+      script:
+        name: "PoC - GitHub Source Pipeline"
+        dockerImage: "python:3.11"
+        script: |
+          echo "Pipeline executado com sucesso no SAP CI&D"
+          echo "Repositorio SOURCE clonado corretamente"
+          echo "Branch: ${GIT_BRANCH}"
