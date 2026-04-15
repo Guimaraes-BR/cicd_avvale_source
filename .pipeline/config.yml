@@ -4,10 +4,11 @@ general:
   buildTool: mta
 
 steps:
-  beforeBuild:
+  before_build:
     dockerImage: "python:3.11"
     commands:
       - echo "=== PoC CI&D Cloud Foundry Pipeline ==="
       - echo "Executando script customizado"
       - echo "Repositorio SOURCE clonado com sucesso"
       - echo "Branch: ${GIT_BRANCH}"
+
