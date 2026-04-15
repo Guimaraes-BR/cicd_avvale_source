@@ -22,9 +22,9 @@ stages:
       - script:
           name: "Publish to target repository"
           script: |
-            git clone https://github.com/ORG/poc-sap-cicd-target.git
-            cp content/app-config.json poc-sap-cicd-target/delivered/app-config.json
-            cd poc-sap-cicd-target
+            git clone https://github.com/Guimaraes-BR/cicd_avvale_target.git
+            cp content/app-config.json cicd_avvale_target/delivered/app-config.json
+            cd cicd_avvale_target
 
             git add delivered/app-config.json
             git commit -m "Delivery via SAP CI&D"
