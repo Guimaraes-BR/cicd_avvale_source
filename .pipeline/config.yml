@@ -1,0 +1,31 @@
+
+general:
+  buildTool: custom
+
+stages:
+  Build:
+    steps:
+      - script:
+          name: "Prepare artifact"
+          script: |
+            echo "Lendo arquivo de origem"
+            cat content/app-config.json
+
+            echo "Atualizando environment para QA"
+            sed -i 's/"environment": "DEV"/"environment": "QA"/' content/app-config.json
+
+            echo "Arquivo atualizado:"
+            cat content/app-config.json
+
+  Release:
+    steps:
+      - script:
+          name: "Publish to target repository"
+          script: |
+            git clone https://github.com/ORG/poc-sap-cicd-target.git
+            cp content/app-config.json poc-sap-cicd-target/delivered/app-config.json
+            cd poc-sap-cicd-target
+
+            git add delivered/app-config.json
+            git commit -m "Delivery via SAP CI&D"
+            git push
