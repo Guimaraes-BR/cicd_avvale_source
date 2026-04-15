@@ -1,14 +1,13 @@
 version: "1.0"
 
 general:
-  buildTool: custom
+  buildTool: mta
 
-stages:
-  Build:
-    steps:
-      - executeCommand:
-          dockerImage: "python:3.11"
-          commands:
-            - echo "Pipeline executado com sucesso no SAP CI&D"
-            - echo "Repositorio SOURCE clonado corretamente"
-            - echo "Branch: ${GIT_BRANCH}"
+steps:
+  beforeBuild:
+    dockerImage: "python:3.11"
+    commands:
+      - echo "=== PoC CI&D Cloud Foundry Pipeline ==="
+      - echo "Executando script customizado"
+      - echo "Repositorio SOURCE clonado com sucesso"
+      - echo "Branch: ${GIT_BRANCH}"
