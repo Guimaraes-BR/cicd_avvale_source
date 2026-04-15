@@ -6,9 +6,9 @@ general:
 stages:
   Build:
     steps:
-      executeCommand:
-        dockerImage: "python:3.11"
-        commands:
-          - echo "Pipeline executado com sucesso no SAP CI&D"
-          - echo "Repositorio SOURCE clonado corretamente"
-          - echo "Branch: ${GIT_BRANCH}"
+      - executeCommand:
+          dockerImage: "python:3.11"
+          commands:
+            - echo "Pipeline executado com sucesso no SAP CI&D"
+            - echo "Repositorio SOURCE clonado corretamente"
+            - echo "Branch: ${GIT_BRANCH}"
