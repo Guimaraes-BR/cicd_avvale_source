@@ -1,4 +1,3 @@
-
 general:
   buildTool: custom
 
@@ -6,26 +5,8 @@ stages:
   Build:
     steps:
       - script:
-          name: "Prepare artifact"
+          name: "PoC - GitHub Source Pipeline"
           script: |
-            echo "Lendo arquivo de origem"
-            cat content/app-config.json
-
-            echo "Atualizando environment para QA"
-            sed -i 's/"environment": "DEV"/"environment": "QA"/' content/app-config.json
-
-            echo "Arquivo atualizado:"
-            cat content/app-config.json
-
-  Release:
-    steps:
-      - script:
-          name: "Publish to target repository"
-          script: |
-            git clone https://github.com/Guimaraes-BR/cicd_avvale_target.git
-            cp content/app-config.json cicd_avvale_target/delivered/app-config.json
-            cd cicd_avvale_target
-
-            git add delivered/app-config.json
-            git commit -m "Delivery via SAP CI&D"
-            git push
+            echo "Pipeline executado com sucesso no SAP CI&D"
+            echo "Repositorio SOURCE clonado corretamente"
+            echo "Branch: $GIT_BRANCH"
