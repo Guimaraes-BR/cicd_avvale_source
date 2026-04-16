@@ -1,5 +1,13 @@
+_schema-version: "3.2"
 ID: poc-cicd
-version: 0.0.1
+version: 1.0.0
 
-modules: []
-resources: []
+modules:
+  - name: poc-cicd-app
+    type: nodejs
+    path: .
+    parameters:
+      memory: 256M
+      disk-quota: 256M
+    build-parameters:
+      builder: npm
