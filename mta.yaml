@@ -3,11 +3,6 @@ ID: poc-cicd
 version: 1.0.0
 
 modules:
-  - name: poc-cicd-app
-    type: nodejs
+  - name: poc-cicd-artifact
+    type: staticfile
     path: .
-    parameters:
-      memory: 256M
-      disk-quota: 256M
-    build-parameters:
-      builder: npm
