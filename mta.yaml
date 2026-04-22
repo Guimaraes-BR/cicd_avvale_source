@@ -1,4 +1,4 @@
-_schema-version: "3.2"
+schema-version: "3.2"
 ID: poc-cicd
 version: 1.0.0
 
@@ -8,3 +8,5 @@ modules:
     path: .
     parameters:
       no-route: true
+      memory: 64M
+      disk-quota: 64M
