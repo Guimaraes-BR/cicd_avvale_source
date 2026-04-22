@@ -11,4 +11,3 @@ steps:
       - echo "Executando script customizado"
       - echo "Repositorio SOURCE clonado com sucesso"
       - echo "Branch: ${GIT_BRANCH}"
-
