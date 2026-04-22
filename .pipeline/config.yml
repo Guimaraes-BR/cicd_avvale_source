@@ -1,13 +1,4 @@
-version: "1.0"
-
-general:
-  buildTool: mta
-
-steps:
-  before_build:
-    dockerImage: "python:3.11"
-    commands:
-      - echo "=== PoC CI&D Cloud Foundry Pipeline ==="
-      - echo "Executando script customizado"
-      - echo "Repositorio SOURCE clonado com sucesso"
-      - echo "Branch: ${GIT_BRANCH}"
+tmsUpload:
+    nodeName: 'TEST'
+    credentialsId: 'tms'
+    customDescription: 'TMS Upload'
