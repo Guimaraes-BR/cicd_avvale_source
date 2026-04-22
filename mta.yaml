@@ -6,3 +6,5 @@ modules:
   - name: poc-cicd-artifact
     type: staticfile
     path: .
+    parameters:
+      no-route: true
